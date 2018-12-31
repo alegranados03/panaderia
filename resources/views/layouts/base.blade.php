@@ -290,6 +290,9 @@
           <li>
             <a href="{{route('mesas.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-cutlery fa-fw" style="font-size: 25px"></i>Mesas</a>
           </li>
+          <li>
+            <a href="{{route('costes.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-file fa-fw" style="font-size: 25px"></i>Costeo</a>
+          </li>
         </ul>
       </div>
       <!-- /.sidebar-collapse -->
