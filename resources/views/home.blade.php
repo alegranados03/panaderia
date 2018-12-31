@@ -173,6 +173,24 @@ Bienvenid@ al Sistema de Panaderia Lila
 							</a>
 						</div>
 					</div>
+
+
+				</div>
+
+				<div class="col-12 col-md-4 col-xl-3" name="procedimientos">
+					<div class="row">
+						<div class="col-12">
+							<a href="{{route('costes.index')}}" class="btn btn-block btn-light">
+								<i class="fa fa-file" style="font-size: 150px;color: black;"></i>
+							</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<a href="{{route('costes.index')}}" class="btn btn-block btn-light" style="color: black;"><h3>Costeo</h3>
+							</a>
+						</div>
+					</div>
 				</div>
 
 

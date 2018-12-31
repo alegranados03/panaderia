@@ -73,3 +73,11 @@ Route::post('quitarDetalleStore/','OrdenController@quitarDetalleStore')->name('q
 
 //Rutas de Mesas
 Route::resource('mesas','MesaController');
+
+
+//Rutas de Costeo
+Route::resource('costes','CosteoController');
+Route::get('costeos','CosteoController@index')->name('listaCosteo');
+Route::get('/ver_costeo/{id}','CosteoController@destroy')->name('verCosteo');
+Route::get('/eliminar_costeo/{id}','CosteoController@eliminar')->name('eliminar_costeo');
+Route::get('/editar_costeo/{id}','CosteoController@edit')->name('editar_costeo');

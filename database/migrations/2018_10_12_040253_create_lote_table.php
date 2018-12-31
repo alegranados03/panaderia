@@ -18,6 +18,7 @@ class CreateLoteTable extends Migration
             $table->string('producto');
             $table->string('codigoLote');
             $table->decimal('total',8,2);
+            $table->integer('estado');
             $table->timestamps();
         });
     }

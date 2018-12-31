@@ -17,11 +17,14 @@ class CreateDetalleLoteTable extends Migration
             $table->increments('id');
             $table->integer('id_lote')->unsigned();
             $table->foreign('id_lote')->references('id')->on('lote');
-            $table->integer('producto_id')->unsigned();
-            $table->foreign('producto_id')->references('id')->on('productos');
-            $table->decimal('costo_invidual',8,2);
-            $table->integer('cantidad_lote');
-            $table->decimal('sub_total',8,2);
+            $table->integer('numero_obreros');
+            $table->decimal('numero_horas',4,2);
+            $table->decimal('precio_hora',4,2);
+            $table->decimal('sub_total_MO',6,2);
+            $table->decimal('suma_materiales',6,2);
+            $table->decimal('tasa_cif',8,4);
+            $table->decimal('importe',6,2);
+            $table->integer('cantidad_unidades');
             $table->timestamps();
         });
     }

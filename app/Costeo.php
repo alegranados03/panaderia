@@ -7,7 +7,7 @@ class costeo extends Model{
 
     protected $table = 'lote';
     protected $primaryKey = 'id';
-    protected $fillabel = ['producto','codigoLote','total'];
+    protected $fillabel = ['producto','codigoLote','total','estado'];
 
 }
 
