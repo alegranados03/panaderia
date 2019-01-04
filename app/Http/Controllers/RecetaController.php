@@ -159,23 +159,27 @@ class RecetaController extends Controller
     public function ingresar_materialX($id){
         $receta = Receta::findOrFail($id);
         $producto = Producto::findOrFail($receta->producto_id);
-        $materiales = DB::select('select materia_prima.id,materia_prima.nombre_materia from materia_prima left join detalle_receta on materia_prima.id = detalle_receta.materiaPrima_id where detalle_receta.materiaPrima_id is null and detalle_receta.receta_id=?',[$id]);
+        //$materiales = DB::select('select materia_prima.id,materia_prima.nombre_materia from materia_prima left join detalle_receta on materia_prima.id = detalle_receta.materiaPrima_id where detalle_receta.materiaPrima_id is null and detalle_receta.receta_id=?',[$id]);
+        $materiales = MateriaPrima::all();
         return view('administracion.receta.agregar_materiaX',['materiales'=>$materiales,'receta'=>$receta,'producto'=>$producto]);
     }
 
     /**
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function store2(Request $request, $id){
+    public function agregarDetalleRecetaStore(Request $request){
 
+        $idReceta = $request->get('idReceta');
+        $receta = Receta::findOrFail($idReceta);
+        $detalle_receta = new Detalle_Receta;
+        $detalle_receta->receta_id = $idReceta;
+        $detalle_receta->producto_id = $receta->producto_id;
+        $detalle_receta->materiaPrima_id = $request->get('material');
+        $detalle_receta->cantidad_individual = $request->get('cantidad');
+        $detalle_receta->save();
 
-
-        $receta_detalle = Detalle_Receta::findOrFail($id);
-        $idReceta = $receta_detalle->receta_id;
-
-        return redirect()->route('editar_receta',$idReceta);
+        return redirect()->route('editar_receta',$receta->id);
     }
 }

@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-inline">
                     <label for="">Cantidad unidades:</label>
-                    <input type="number" class="form-control" id="cantidad" name="cantidad" value="{{$detalle->cantidad_unidades}}" onChange="importes()">
+                    <input type="number" class="form-control" id="cantidad" name="cantidad" disabled value="{{$detalle->cantidad_unidades}}" onChange="importes()">
                 </div>
             </div>
             <div class="col-sm-6">

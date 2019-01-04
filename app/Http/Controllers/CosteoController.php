@@ -49,11 +49,21 @@ class CosteoController extends Controller
      */
     public function store(Request $request)
     {
+
         //$lote = Costeo::create(['producto'=>$request->get('producto'),'codigoLote'=>$request->get('codigoLote'),'total'=>$request->get('total')]);
+        $producto = $request->get('producto');
+        $cantidad = $request->get('cantidad');
+        $idProducto = DB::table('productos')->where('nombre_producto','=',$producto)->first();
+        $stock = Producto::findOrFail($idProducto->id);
+        $unidades = $idProducto->stock;
+        $stock->stock = $unidades + $cantidad;
+        $stock->update();
+
         $lote = new Costeo;
-        $lote->producto = $request->get('producto');
+        $lote->producto = $producto;
         $lote->codigoLote = $request->get('codigoLote');
         $lote->total = $request->get('total');
+        $lote->estado = 1;
         $lote->save();
         $lote2 = DB::select('select LAST_INSERT_ID() from lote');
         $detalleLote = new DetalleLote;
@@ -65,7 +75,7 @@ class CosteoController extends Controller
         $detalleLote->suma_materiales = $request->get('suma_materiales');
         $detalleLote->tasa_cif = $request->get('tasa');
         $detalleLote->importe = $request->get('importe');
-        $detalleLote->cantidad_unidades = $request->get('cantidad');
+        $detalleLote->cantidad_unidades = $cantidad;
         $detalleLote->save();
 
         return redirect()->action('CosteoController@index')->with('msj','Costeo agregada con éxito');
@@ -134,7 +144,7 @@ class CosteoController extends Controller
         $detalleLote->sub_total_MO = $request->get('subtotal');
         $detalleLote->tasa_cif = $request->get('tasa');
         $detalleLote->importe = $request->get('importe');
-        $detalleLote->cantidad_unidades = $request->get('cantidad');
+       // $detalleLote->cantidad_unidades = $request->get('cantidad');
         $detalleLote->update();
 
         return redirect()->action('CosteoController@index')->with('msj','Costeo editado con éxito');
