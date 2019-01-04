@@ -75,9 +75,24 @@ Route::post('quitarDetalleStore/','OrdenController@quitarDetalleStore')->name('q
 Route::resource('mesas','MesaController');
 
 
+
+
 //Rutas de Costeo
 Route::resource('costes','CosteoController');
 Route::get('costeos','CosteoController@index')->name('listaCosteo');
 Route::get('/ver_costeo/{id}','CosteoController@destroy')->name('verCosteo');
 Route::get('/eliminar_costeo/{id}','CosteoController@eliminar')->name('eliminar_costeo');
 Route::get('/editar_costeo/{id}','CosteoController@edit')->name('editar_costeo');
+
+
+//Rutas de Receta
+Route::resource('recetas','RecetaController');
+Route::get('lista_recetas','RecetaController@index')->name('lista_recetas');
+Route::get('/mostrar_materiales/{id}','RecetaController@mostrar_materiales')->name('materiales_mostrar');
+Route::get('/eliminar_receta_detalle/{id}','RecetaController@destroy')->name('eliminar_receta_detalle');
+Route::get('/ver_receta/{id}','RecetaController@ver_receta')->name('ver_receta');
+Route::get('/editar_receta/{id}','RecetaController@edit')->name('editar_receta');
+Route::get('/editar_receta_detalle/{id}','RecetaController@editar_detalle')->name('editar_receta_detalle');
+Route::get('/mostrar_materiales_xtras/{id}','RecetaController@ingresar_materialX')->name('mostrar_materiales_xtras');
+Route::get('/agregar_materiales_xtras/{id}','RecetaController@store2')->name('insertar_mx');
+

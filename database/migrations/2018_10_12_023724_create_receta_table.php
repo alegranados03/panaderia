@@ -15,12 +15,8 @@ class CreateRecetaTable extends Migration
     {
         Schema::create('receta', function (Blueprint $table) {
             $table->increments('id');
-            
-            $table->integer('producto_id')->unsigned();
-            $table->foreign('producto_id')->references('id')->on('productos');
-            $table->integer('materiaPrima_id')->unsigned();
-            $table->foreign('materiaPrima_id')->references('id')->on('materia_prima');
-            $table->decimal('cantidad_individual',8,2);
+            $table->integer('producto_id');
+            $table->integer('estado');
             $table->timestamps();
         });
     }

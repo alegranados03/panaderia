@@ -293,6 +293,9 @@
           <li>
             <a href="{{route('costes.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-file fa-fw" style="font-size: 25px"></i>Costeo</a>
           </li>
+          <li>
+            <a href="{{route('recetas.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-file fa-fw" style="font-size: 25px"></i>Receta</a>
+          </li>
         </ul>
       </div>
       <!-- /.sidebar-collapse -->

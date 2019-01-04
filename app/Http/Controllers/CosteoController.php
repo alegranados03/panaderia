@@ -80,7 +80,7 @@ class CosteoController extends Controller
     public function show($id)
     {
         $valor2=Producto::findOrFail($id);
-        $receta = DB::select('select receta.*,productos.*,materia_prima.* from productos inner join receta on productos.id = receta.producto_id inner join materia_prima on receta.materiaPrima_id= materia_prima.id where producto_id=?',[$id]);
+        $receta = DB::select('select detalle_receta.*,productos.*,materia_prima.* from productos inner join detalle_receta on productos.id = detalle_receta.producto_id inner join materia_prima on detalle_receta.materiaPrima_id= materia_prima.id where producto_id=?',[$id]);
         $fecha = Carbon::now();
         $fecha =$fecha->format('d-m-y');
 
@@ -163,7 +163,7 @@ class CosteoController extends Controller
     public function eliminar($id){
         $lote = Costeo::findOrFail($id);
         $lote->estado = 0;
-        $lote->save();
+        $lote->update();
 
         return redirect()->action('CosteoController@index')->with('msj','Costeo eliminado con éxito');
     }
