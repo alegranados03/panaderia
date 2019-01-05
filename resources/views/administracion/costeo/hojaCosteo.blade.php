@@ -5,6 +5,7 @@
 @section('content')
 
     <div class="container">
+
         <center> <h2>Hoja de costeo</h2></center>
         <center><p>ORDEN DE FABRICACION</p></center>
         {{ Form::open(['route' => 'costes.store', 'method' => 'POST','class' => 'form-group', 'autocomplete' => 'off', 'files'=>true])}}
@@ -12,7 +13,7 @@
                 <div class="col-sm-6">
 
                     <div class="form-inline">
-                        <label for="">Produccion(Articulo)</label>
+                        <label for="">Produccion(Articulo):</label>
                         <input for="" class="form-control" name="producto" value="{{$valor2->nombre_producto}}" >
 
                     </div>
