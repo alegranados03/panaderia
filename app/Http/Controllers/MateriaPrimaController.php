@@ -47,7 +47,7 @@ class MateriaPrimaController extends Controller
         try{
             $materia_prima=new MateriaPrima($request->all());
             $materia_prima->save();
-            return redirect()->action('MateriaPrimaController@index',["materia_prima"=>$materia_prima->id])->with('msj','#');
+            return redirect()->action('MateriaPrimaController@index',["materia_prima"=>$materia_prima->id])->with('msj','Material ingresado con exito');
           }catch(Exception $e)
             {
   
@@ -100,7 +100,7 @@ class MateriaPrimaController extends Controller
                 $materia_prima->costo_adquisicion=$request->costo_adquisicion;
                 $materia_prima->cantidad=$request->cantidad;
                 $materia_prima->save();
-              return redirect()->action('MateriaPrimaController@show',['id' =>$materia_prima->id])->with('msj','#');
+              return redirect()->action('MateriaPrimaController@show',['id' =>$materia_prima->id])->with('msj','Material actualizado con exito');
               }catch(Exception $e){
                 return back()->with('msj2','material no editado,revise los datos proporcionados');
               }

@@ -263,6 +263,9 @@
               <li>
                 <a href="{{route('productos.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-list fa-fw" style="font-size: 25px"></i> Productos</a>
               </li>
+              <li>
+                <a href="{{route('materiaPrima.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-list fa-fw" style="font-size: 25px"></i> Materia Prima</a>
+              </li>
             </ul>
             <!-- /.nav-second-level -->
           </li>
