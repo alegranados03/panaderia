@@ -49,7 +49,7 @@ class MesaController extends Controller
         try {
           $mesa = new Mesa($request->all());
           if($mesa->save()){
-            return redirect()->action('MesaController@index');
+            return redirect()->action('MesaController@index',["mesa"=>$mesa->id])->with('msj','Mesa registrada con exito');
           }
         } catch (Exception $e) {
 
@@ -98,7 +98,7 @@ class MesaController extends Controller
         $mesa->codigo_mesa=$request->codigo_mesa;
         $mesa->capacidad_personas=$request->capacidad_personas;
         if($mesa->update()){
-          return redirect()->action('MesaController@index');
+          return redirect()->action('MesaController@index',["mesa"=>$mesa->id])->with('msj','Mesa editada con exito');
         }
 
 

@@ -98,7 +98,7 @@ class CategoriaController extends Controller
         $categoria->fill(['imagen'=>asset($direccion)])->save();}else{
           $categoria->update();
       }
-      return redirect()->action('CategoriaController@show',['$categoria' =>$categoria->id])->with('msj','Producto editado con éxito');
+      return redirect()->action('CategoriaController@index',['$categoria' =>$categoria->id])->with('msj','Producto editado con éxito');
       }catch(Exception $e)
         {
 

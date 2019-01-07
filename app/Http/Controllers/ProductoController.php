@@ -115,7 +115,7 @@ class ProductoController extends Controller
       $producto->fill(['imagen'=>asset($direccion)])->save();}else{
         $producto->update();
     }
-        return redirect()->action('ProductoController@show',['producto' =>$producto->id])->with('msj','Producto editado con éxito');
+        return redirect()->action('ProductoController@index',['producto' =>$producto->id])->with('msj','Producto editado con éxito');
       }catch(Exception $e)
         {
 

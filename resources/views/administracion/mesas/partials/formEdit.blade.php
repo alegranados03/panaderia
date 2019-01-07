@@ -10,7 +10,7 @@
 <div class="row">
 	<div class="col-md-12">
 		{{ Form::label('capacidad_personas','capacidad de personas') }}
-		{{ Form::text('capacidad_personas',null,['class'=> 'form-control','style' => 'resize:none']) }}
+		{{ Form::number('capacidad_personas',null,['class'=> 'form-control','style' => 'resize:none','min'=>0,'max'=>1000000]) }}
     </div>
 </div>
 <br/>
