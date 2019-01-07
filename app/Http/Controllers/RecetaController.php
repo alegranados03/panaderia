@@ -109,7 +109,7 @@ class RecetaController extends Controller
         $detalle_receta->cantidad_individual = $request->get('cantidad');
         $detalle_receta->update();
 
-        return redirect()->route('editar_receta',$idReceta);
+        return redirect()->route('editar_receta',$idReceta)->with('msj','Receta Editada con éxito');
     }
 
     /**
@@ -124,7 +124,7 @@ class RecetaController extends Controller
         $idReceta = $receta_detalle->receta_id;
         $receta_detalle->delete();
 
-        return redirect()->route('editar_receta',$idReceta);
+        return redirect()->route('editar_receta',$idReceta)->with('msj','Detalle de receta eliminada con éxito');
     }
 
     /**
@@ -180,6 +180,6 @@ class RecetaController extends Controller
         $detalle_receta->cantidad_individual = $request->get('cantidad');
         $detalle_receta->save();
 
-        return redirect()->route('editar_receta',$receta->id);
+        return redirect()->route('editar_receta',$receta->id)->with('msj','Detalle de receta guardada con éxito');
     }
 }

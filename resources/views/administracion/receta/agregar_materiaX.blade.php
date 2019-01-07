@@ -33,7 +33,7 @@
                <div class="form-group">
                    <label>
                        Cantidad invividual:
-                       <input type="number" step="any" name="cantidad" class="form-control" >
+                       <input type="number" step="any" name="cantidad" class="form-control" pattern="^\d*(\.\d{0,2})?$"  title="Introducir valor numerico positivo con 2 decimales" placeholder="0.00" min="0" max="1000000" required>
                    </label>
                </div>
                <button type="submit" class="btn btn-success">Guardar</button>

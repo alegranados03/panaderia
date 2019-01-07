@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Categoria;
 use Storage;
 use Illuminate\Http\Request;
+use App\Http\Requests\CategoriaForm;
 
 class CategoriaController extends Controller
 {
@@ -44,7 +45,7 @@ class CategoriaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoriaForm $request)
     {
       $direccion=Storage::disk('public')->put('imagenes',$request->file('imagen'));
       try{
@@ -87,7 +88,7 @@ class CategoriaController extends Controller
      * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(CategoriaForm $request, Categoria $categoria)
     {
       try{
         $categoria->nombre_categoria=$request->nombre_categoria;

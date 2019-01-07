@@ -6,6 +6,12 @@
 
     <div class="container">
         <center> <h2>Editar Receta de Producto:<strong>{{$producto->nombre_producto}}</strong> </h2></center>
+        @if(session()->has('msj'))
+            <div class="alert alert-success" role="alert">{{session('msj')}}</div>
+        @endif
+        @if(session()->has('msj2'))
+            <div class="alert alert-danger" role="alert">{{session('msj2')}}</div>
+        @endif
         <a class="btn btn-success" href="{{route('mostrar_materiales_xtras',['id'=>$receta->id])}}">Agregar material</a>
         <table class="table table-hover">
             <thead>

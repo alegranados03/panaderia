@@ -10,6 +10,7 @@ use App\Producto;
 use App\DetalleOrden;
 use Illuminate\Http\Request;
 
+
 class OrdenController extends Controller
 {
     /**

@@ -2,6 +2,7 @@
 	<div class="col-md-6">
 		{{ Form::label('nombre_categoria','Nombre de la Categoria') }}
 		{{ Form::text('nombre_categoria',null,['class'=> 'form-control','required', 'autofocus']) }}
+		{!! $errors->first('nombre_categoria', '<p class="alert alert-danger" role="alert">:message</p>') !!}
     </div>
 </div>
 
@@ -10,6 +11,7 @@
 <div class="col-md-6">
 	{{ Form::label('imagen','Imagen del Producto') }}
 	{{ Form::file('imagen') }}
+	{!! $errors->first('imagen', '<p class="alert alert-danger" role="alert">:message</p>') !!}
 	</div>
 	</div>
 <br/>

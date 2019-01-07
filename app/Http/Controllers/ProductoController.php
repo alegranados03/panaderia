@@ -63,7 +63,6 @@ class ProductoController extends Controller
           $producto=new Producto($request->all());
           $producto->stock=0;
           $producto->fill(['imagen'=>asset($direccion)])->save();
-
           return redirect()->action('ProductoController@index',['producto' =>$producto->id])->with('msj','Producto agregado con éxito');
         }catch(Exception $e)
           {

@@ -8,6 +8,12 @@
 
     <div class="container">
         <h1><center>Lista de costes por Lote</center> </h1>
+        @if(session()->has('msj'))
+            <div class="alert alert-success" role="alert">{{session('msj')}}</div>
+        @endif
+        @if(session()->has('msj2'))
+            <div class="alert alert-danger" role="alert">{{session('msj2')}}</div>
+        @endif
         <div class="row">
             <div class="col-md-2 col-sm-12" style="margin-top:1%;">
                 <a href="{{route('costes.create')}}" class="btn btn-success btn-sm">

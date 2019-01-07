@@ -10,6 +10,7 @@ use App\DetalleOrden;
 use Illuminate\Http\Request;
 use Session;
 use App\Carrito;
+use App\Http\Requests\OrdenFormRequest;
 
 class PagoController extends Controller
 {
@@ -39,7 +40,7 @@ class PagoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OrdenFormRequest $request)
     {
         try {
           //se llama al carrito

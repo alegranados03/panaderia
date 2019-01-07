@@ -5,6 +5,12 @@
 @section('content')
     <div class="container">
         <center> <h2>LISTADO DE RECETAS POR PRODUCTO</h2></center>
+        @if(session()->has('msj'))
+            <div class="alert alert-success" role="alert">{{session('msj')}}</div>
+        @endif
+        @if(session()->has('msj2'))
+            <div class="alert alert-danger" role="alert">{{session('msj2')}}</div>
+        @endif
         <a href="{{route('recetas.create')}}" class="btn btn-success">Crear receta</a>
         <table class="table table-borderless">
             <thead>

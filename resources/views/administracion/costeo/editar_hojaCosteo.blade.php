@@ -22,29 +22,29 @@
                 </div>
                 <div class="form-inline">
                     <label for="">Cantidad unidades:</label>
-                    <input type="number" class="form-control" id="cantidad" name="cantidad" disabled value="{{$detalle->cantidad_unidades}}" onChange="importes()">
+                    <input type="number" class="form-control" id="cantidad" name="cantidad" readonly value="{{$detalle->cantidad_unidades}}" onChange="importes()" pattern="[0-9]{1,3}" title="Introducir valor numerico positivo" placeholder="0" min="0" max="1000000">
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-inline">
                     <label for="">#Obreros:</label>
-                    <input type="number" class="form-control" name="obreros" value="{{$detalle->numero_obreros}}"  id="obreros" onChange="calcular()">
+                    <input type="number" class="form-control" name="obreros" value="{{$detalle->numero_obreros}}"  id="obreros" onChange="calcular()" pattern="[0-9]{1,3}" title="Introducir valor numerico positivo" placeholder="0" min="0" max="1000000" required>
                 </div>
                 <div class="form-inline">
                     <label for="">#Horas:</label>
-                    <input type="number" class="form-control" name="horas" id="horas" step="any"  value="{{$detalle->numero_horas}}" onChange="calcular()">
+                    <input type="number" class="form-control" name="horas" id="horas" step="any"  value="{{$detalle->numero_horas}}" onChange="calcular()" pattern="^\d*(\.\d{0,2})?$"  title="Introducir valor numerico positivo con 2 decimales" placeholder="0.00" min="0" max="1000000" required>
                 </div>
                 <div class="form-inline">
                     <label for="">P/hora:</label>
-                    <input type="number" class="form-control" name="phora" id="phora" step="any" value="{{$detalle->precio_hora}}"  onChange="calcular()">
+                    <input type="number" class="form-control" name="phora" id="phora" step="any" value="{{$detalle->precio_hora}}"  onChange="calcular()" pattern="^\d*(\.\d{0,2})?$"  title="Introducir valor numerico positivo con 2 decimales" placeholder="0.00" min="0" max="1000000" required>
                 </div>
                 <div class="form-inline">
                     <label for="">Sub-total MO:</label>
-                    <input type="number" class="form-control" name="subtotal" id="subtotal" step="any" value="{{$detalle->sub_total_MO}}" onChange="importes()" >
+                    <input type="number" class="form-control" name="subtotal" id="subtotal" step="any" value="{{$detalle->sub_total_MO}}" onChange="importes()" required readonly>
                 </div>
                 <div class="form-inline">
                     <label for="">Tasa CIF %:</label>
-                    <input type="number" class="form-control" name="tasa" id="tasa" step="any" value="{{number_format($detalle->tasa_cif,2,'.',',')}}" onChange="importes()">
+                    <input type="number" class="form-control" name="tasa" id="tasa" step="any" value="{{number_format($detalle->tasa_cif,2,'.',',')}}" onChange="importes()" pattern="^\d*(\.\d{0,2})?$"  title="Introducir valor numerico positivo con 2 decimales" placeholder="0.00" min="0" max="1000000" required>
                 </div>
             </div>
 
@@ -73,17 +73,17 @@
             <tr>
 
                 <th class="col-sm-10 " style="background-color:DodgerBlue;color:white">Suma Materiales:</th>
-                <th class="col-sm-2"><input value="{{$detalle->suma_materiales}}" id="suma_materiales" name="suma_materiales"  onChange="importes()"> </th>
+                <th class="col-sm-2"><input value="{{$detalle->suma_materiales}}" id="suma_materiales" name="suma_materiales"  onChange="importes()" readonly> </th>
             </tr>
             <tr>
 
                 <th class="col-sm-10 " style="background-color:DodgerBlue;color:white">Importe  = Tasa%*(Materiales + Mano de obra):</th>
-                <th class="col-sm-2"><input class="" id="importe" type="number" name="importe" step="any"  value="" onChange="importes()"></th>
+                <th class="col-sm-2"><input class="" id="importe" type="number" name="importe" step="any"  value="" onChange="importes()" readonly></th>
             </tr>
             <tr>
 
                 <th class="col-sm-10 " style="background-color:DodgerBlue;color:white">Total:</th>
-                <th class="col-sm-2"><input class="" id="total" name="total" type="number" step="any"  value=""></th>
+                <th class="col-sm-2"><input class="" id="total" name="total" type="number" step="any"  value="" readonly></th>
             </tr>
             </thead>
         </table>

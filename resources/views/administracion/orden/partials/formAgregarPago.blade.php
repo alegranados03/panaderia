@@ -14,6 +14,7 @@
 	<div class="col-md-3">
 		{{ Form::label('recibido','Cantidad Recibida:',['id' => 'cantidadRecibida']) }}
 		{{ Form::number('recibido2',null,['class' => 'form-control','min' =>'0.01','step' => '0.01','id'=>'cantidadRecibida2'])}}
+		{!! $errors->first('recibido2', '<p class="alert alert-danger" role="alert">:message</p>') !!}
 	</div>
 </div>
 <br/>
@@ -28,6 +29,7 @@
 	<div class="col-md-3">
 		{{ Form::label('tarjeta_credito','No de Tarjeta:',['id' => 'campoTarjeta','style' =>'display:none']) }}
 		{{ Form::text('tarjeta_credito2',null,['class'=>'form-control','id' => 'campoTarjeta2','placeholder' => 'XXXX-XXXX-XXXX-XXXX','style' =>'display:none']) }}
+		{!! $errors->first('tarjeta_credito2', '<p class="alert alert-danger" role="alert">:message</p>') !!}
 	</div>
 </div>
 <br/>
