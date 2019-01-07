@@ -28,7 +28,7 @@
                 </td>
                 <div class="row">
                     <div class="col">
-                        <td><input class="" type="number" id="boton" name="cantidad[]" step="any"></td>
+                        <td><input class="" type="number" step="0.01" name="cantidad[]"  pattern="^\d*(\.\d{0,2})?$"  title="Introducir valor numerico positivo con 2 decimales" placeholder="0.00" min="0" max="1000000"></td>
                     </div>
                     <div class="col">
 

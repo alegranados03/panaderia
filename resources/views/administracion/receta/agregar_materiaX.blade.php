@@ -22,7 +22,7 @@
                <div class="form-group">
                    <label>
                        Seleccione material:
-                      <select name="material" class="form-control">
+                      <select name="material" class="form-control" required>
                            <option value="">-------</option>
                            @foreach($materiales as $materia)
                                <option value="{{$materia->id}}">{{$materia->nombre_materia}}</option>
@@ -33,7 +33,7 @@
                <div class="form-group">
                    <label>
                        Cantidad invividual:
-                       <input type="number" step="any" name="cantidad" class="form-control" pattern="^\d*(\.\d{0,2})?$"  title="Introducir valor numerico positivo con 2 decimales" placeholder="0.00" min="0" max="1000000" required>
+                       <input type="number" step="0.01" name="cantidad" class="form-control" pattern="^\d*(\.\d{0,2})?$"  title="Introducir valor numerico positivo con 2 decimales" placeholder="0.00" min="0" max="1000000" required>
                    </label>
                </div>
                <button type="submit" class="btn btn-success">Guardar</button>
