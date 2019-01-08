@@ -19,6 +19,10 @@ class PagoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct(){
+       $this->middleware('auth');
+     }
     public function index()
     {
         $categorias = Categoria::all();
@@ -46,13 +50,20 @@ class PagoController extends Controller
           //se llama al carrito
           $carritoAnt=Session::has('carrito') ? Session::get('carrito') : null;
           $carrito=new Carrito($carritoAnt);
+
               //se crea la orden y se asocian los datos y se crea en la base
-              $orden=new Orden();
-              $orden->codigo_seguimiento=substr(microtime(),11,strlen(microtime())-11);
-              $orden->estado_servicio="PENDIENTE";
-              $orden->estado_pago="SIN CANCELAR";
-              $orden->tipo_orden="EN LINEA";
-              $orden->user_id=auth()->user()->id;
+              if($carrito->elementos!=null){
+              
+                $orden=new Orden();
+                $orden->codigo_seguimiento=substr(microtime(),11,strlen(microtime())-11);
+                $orden->estado_servicio="PENDIENTE";
+                $orden->estado_pago="SIN CANCELAR";
+                $orden->tipo_orden="EN LINEA";
+                $orden->user_id=auth()->user()->id;
+              }else{
+                return back()->with('error');
+              }
+
               if($orden->save()){
                 //se registran los detalles de la orden y se guardan en la base
                 foreach($carrito->elementos as $producto){
@@ -94,7 +105,7 @@ class PagoController extends Controller
                 //se elimina el carrito
                 $carrito=null;
                 $request->session()->put('carrito',$carrito);
-          return redirect()->action('TiendaController@index');
+          return redirect()->action('TiendaController@index')->with('compra realizada con éxito, puede pasar a retirar su compra con el número de orden: '.$orden->codigo_seguimiento);
 
         } catch (Exception $e) {
 

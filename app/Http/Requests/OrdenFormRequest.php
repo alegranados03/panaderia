@@ -24,8 +24,15 @@ class OrdenFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'recibido2'=>'required|numeric|between:0.01,100000.99',
-            'tarjeta_credito2'=>'required|string|max:19|regex:/^\d{4}-\d{4}-\d{4}-\d{4}$/',
+
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+
+
         ];
     }
 }

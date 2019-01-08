@@ -17,6 +17,10 @@ class CosteoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct(){
+       $this->middleware('auth');
+       $this->middleware('has.permission:gestionar_costeo');
+     }
     public function index(Request $request)
     {
         if($request){
@@ -178,5 +182,5 @@ class CosteoController extends Controller
         return redirect()->action('CosteoController@index')->with('msj','Costeo eliminado con éxito');
     }
 
-    
+
 }

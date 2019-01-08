@@ -13,6 +13,7 @@ class rolDefaultSeeder extends Seeder
     {
       DB::table('roles')->insert(['name'=>'Administrador','slug'=>'administrador','special'=>'all-access']);
       DB::table('roles')->insert(['name'=>'Empleado','slug'=>'empleado']);
+      DB::table('roles')->insert(['name'=>'Contador','slug'=>'contador']);
       DB::table('roles')->insert(['name'=>'Cliente','slug'=>'cliente']);
     }
 }

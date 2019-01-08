@@ -16,6 +16,12 @@ class MateriaPrimaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct(){
+       $this->middleware('auth');
+       $this->middleware('has.permission:gestionar_materia');
+     }
+
     public function index(Request $request)
     {
         if($request){
@@ -50,7 +56,7 @@ class MateriaPrimaController extends Controller
             return redirect()->action('MateriaPrimaController@index',["materia_prima"=>$materia_prima->id])->with('msj','Material ingresado con exito');
           }catch(Exception $e)
             {
-  
+
           }
     }
 
@@ -91,9 +97,9 @@ class MateriaPrimaController extends Controller
             'nombre_materia'=>'string|max:100',
             'costo_adquisicion'=>'required|numeric|between:0,100000.99',
             'cantidad'=>'required|Integer',
-    
+
           ]);
-          
+
             try{
                 $materia_prima=MateriaPrima::findOrFail($id);
                 $materia_prima->nombre_materia=$request->nombre_materia;

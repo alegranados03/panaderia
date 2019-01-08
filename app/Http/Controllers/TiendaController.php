@@ -19,6 +19,11 @@ class TiendaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct(){
+       $this->middleware('auth',['only'=>['miperfil','misordenes']]);
+       $this->middleware('has.permission:ver_perfil',['only'=>['miperfil','misordenes']]);
+     }
     public function index()
     {
       $categoria=Categoria::select('id')->where('nombre_categoria','=','Pastelería')->value('id');
@@ -105,11 +110,11 @@ class TiendaController extends Controller
         if(auth()->user()->isCliente()){
             $categorias = Categoria::all();
             $ordenes=Orden::where('user_id','=',auth()->user()->id)->get();
-            return view('cliente.miperfil',compact('categorias','ordenes'));    
+            return view('cliente.miperfil',compact('categorias','ordenes'));
         }else{
             return view('administracion.usuarios.miperfil');
         }
-        
+
     }
 
     public function misordenes(){

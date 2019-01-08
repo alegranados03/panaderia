@@ -32,6 +32,7 @@ Route::get('/nuestrosProductos','ProductoController@mostrarCategorias')->name('m
 
 
 
+
 Route::resource('tienda','TiendaController');
 Route::get('miperfil','TiendaController@miperfil')->name('miperfil');
 Route::get('misordenes', 'TiendaController@misordenes')->name('misordenes');
@@ -95,4 +96,3 @@ Route::get('/editar_receta/{id}','RecetaController@edit')->name('editar_receta')
 Route::get('/editar_receta_detalle/{id}','RecetaController@editar_detalle')->name('editar_receta_detalle');
 Route::get('/mostrar_materiales_xtras/{id}','RecetaController@ingresar_materialX')->name('mostrar_materiales_xtras');
 Route::post('agregar_materiales_xtras/','RecetaController@agregarDetalleRecetaStore')->name('insertarmxStore');
-

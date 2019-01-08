@@ -183,6 +183,8 @@
                 </div>
 
                 <ul class="cat_menu">
+                  <li><a href="{{route('mostrarCategorias')}}">Ver Por Categoría <i class="fas fa-chevron-right ml-auto"></i></a></li>
+                  <li><a href="{{route('mostrarProductos',['id'=>0])}}">Ver todos los productos <i class="fas fa-chevron-right ml-auto"></i></a></li>
                   @foreach($categorias as $cat)
                   <li><a href="{{route('mostrarProductos',['id'=>$cat->id])}}">{{$cat->nombre_categoria}} <i class="fas fa-chevron-right ml-auto"></i></a></li>
                   @endforeach

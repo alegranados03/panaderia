@@ -18,6 +18,10 @@ class OrdenController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct(){
+       $this->middleware('has.permission:gestionar_ordenes',['except'=>['show']]);
+     }
     public function index()
     {
         $ordenes = Orden::join('mesas','ordenes.mesa_id','=','mesas.id')

@@ -19,7 +19,8 @@ class CategoriaController extends Controller
 
      //Referencia al middleware
      public function __construct(){
-       //$this->middleware('auth');
+       $this->middleware('auth');
+       $this->middleware('has.permission:gestionar_categorias');
      }
 
 

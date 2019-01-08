@@ -59,52 +59,9 @@
       <ul class="nav navbar-top-links navbar-right">
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+            <i class=""></i> <i class="fa fa-caret-down"></i>
           </a>
-          <ul class="dropdown-menu dropdown-messages">
-            <li>
-              <a href="#">
-                <div>
-                  <strong>John Smith</strong>
-                  <span class="pull-right text-muted">
-                    <em>Yesterday</em>
-                  </span>
-                </div>
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-              </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="#">
-                <div>
-                  <strong>John Smith</strong>
-                  <span class="pull-right text-muted">
-                    <em>Yesterday</em>
-                  </span>
-                </div>
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-              </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="#">
-                <div>
-                  <strong>John Smith</strong>
-                  <span class="pull-right text-muted">
-                    <em>Yesterday</em>
-                  </span>
-                </div>
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-              </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a class="text-center" href="#">
-                <strong>Read All Messages</strong>
-                <i class="fa fa-angle-right"></i>
-              </a>
-            </li>
-          </ul>
+
           <!-- /.dropdown-messages -->
         </li>
         <!-- /.dropdown -->
@@ -112,78 +69,7 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
           </a>
-          <ul class="dropdown-menu dropdown-tasks">
-            <li>
-              <a href="#">
-                <div>
-                  <p>
-                    <strong>Task 1</strong>
-                    <span class="pull-right text-muted">40% Complete</span>
-                  </p>
-                  <div class="progress progress-striped active">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                      <span class="sr-only">40% Complete (success)</span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="#">
-                <div>
-                  <p>
-                    <strong>Task 2</strong>
-                    <span class="pull-right text-muted">20% Complete</span>
-                  </p>
-                  <div class="progress progress-striped active">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                      <span class="sr-only">20% Complete</span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="#">
-                <div>
-                  <p>
-                    <strong>Task 3</strong>
-                    <span class="pull-right text-muted">60% Complete</span>
-                  </p>
-                  <div class="progress progress-striped active">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                      <span class="sr-only">60% Complete (warning)</span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="#">
-                <div>
-                  <p>
-                    <strong>Task 4</strong>
-                    <span class="pull-right text-muted">80% Complete</span>
-                  </p>
-                  <div class="progress progress-striped active">
-                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                      <span class="sr-only">80% Complete (danger)</span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a class="text-center" href="#">
-                <strong>See All Tasks</strong>
-                <i class="fa fa-angle-right"></i>
-              </a>
-            </li>
-          </ul>
+
           <!-- /.dropdown-tasks -->
         </li>
         <!-- /.dropdown -->
@@ -191,17 +77,7 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white; font-size: 20px">
             <i class="fa fa-shopping-cart fa-fw"></i> <i class="fa fa-caret-down"></i>
           </a>
-          <ul class="dropdown-menu dropdown-alerts">
-            <li>
-              <a href="#">
-                <div>
-                  <i class="fa fa-comment fa-fw"></i> New Comment
-                  <span class="pull-right text-muted small">4 minutes ago</span>
-                </div>
-              </a>
-            </li>
-            <li class="divider"></li>
-          </ul>
+
           <!-- /.dropdown-alerts -->
         </li>
         <!-- /.dropdown -->
@@ -257,21 +133,30 @@
           <li>
             <a href="#" style="color: black; font-weight: bold;"><i class="fa fa-cogs" style="font-size: 25px"></i> Gestionar Producto<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
+              @can('gestionar_categoria')
               <li>
                 <a href="{{route('categorias.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-list-alt fa-fw" style="font-size: 25px"></i> Categoria</a>
               </li>
+              @endcan
+              @can('gestionar_productos')
               <li>
                 <a href="{{route('productos.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-list fa-fw" style="font-size: 25px"></i> Productos</a>
               </li>
+              @endcan
+              @can('gestionar_materia')
               <li>
                 <a href="{{route('materiaPrima.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-list fa-fw" style="font-size: 25px"></i> Materia Prima</a>
               </li>
+              @endcan
             </ul>
             <!-- /.nav-second-level -->
           </li>
+          @can('gestionar_usuarios')
           <li>
             <a href="{{route('usuarios.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-user fa-fw" style="font-size: 25px"></i> Usuarios</a>
           </li>
+          @endcan
+          @can('gestionar_ordenes')
           <li>
             <a href="#" style="color: black; font-weight: bold;"><i class="fa fa-folder-open-o" style="font-size: 25px"></i> Gestionar Orden<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
@@ -290,15 +175,22 @@
             </ul>
             <!-- /.nav-second-level -->
           </li>
+          @endcan
+          @can('gestionar_mesas')
           <li>
             <a href="{{route('mesas.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-cutlery fa-fw" style="font-size: 25px"></i>Mesas</a>
           </li>
+          @endcan
+          @can('gestionar_costeo')
           <li>
             <a href="{{route('costes.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-file fa-fw" style="font-size: 25px"></i>Costeo</a>
           </li>
+          @endcan
+          @can('gestionar_recetas')
           <li>
             <a href="{{route('recetas.index')}}" style="color: black; font-weight: bold;"><i class="fa fa-file fa-fw" style="font-size: 25px"></i>Receta</a>
           </li>
+          @endcan
         </ul>
       </div>
       <!-- /.sidebar-collapse -->

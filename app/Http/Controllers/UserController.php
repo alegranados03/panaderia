@@ -23,7 +23,11 @@ class UserController extends Controller
 
   //Referencia al middleware
   public function __construct(){
-    //$this->middleware('auth');
+    $this->middleware('auth');
+    $this->middleware('has.permission:gestionar_usuarios',['only'=>['index','create','store','show','edit','update']]);
+    $this->middleware('has.permission:editar_perfil',['only'=>['editarPerfil','editarPerfilUpdate','asignarTarjeta']]);
+    $this->middleware('has.permission:cambiar_contrasena',['only'=>['editPassword','actualizarPassword']]);
+
   }
   public function index(Request $request)
   {
@@ -201,7 +205,7 @@ class UserController extends Controller
     ]);
 
     try {
-      $user = User::findOrFail($id);
+      $user = User::findOrFail(auth()->user()->id);
 
       $user->tarjeta_credito = $request->tarjeta_credito;
       $user->update();
@@ -216,11 +220,11 @@ class UserController extends Controller
 
   public function editarPerfil($id){
     if(auth()->user()->isCliente()){
-      $user = User::findOrFail($id);
+      $user = User::findOrFail(auth()->user()->id);
       $categorias = Categoria::all();
       return view('cliente.editarPerfil',compact('user','categorias'));
     }else{
-      $user = User::findOrFail($id);
+      $user = User::findOrFail(auth()->user()->id);
       return view($this->path.'editarPerfil',compact('user'));
     }
   }

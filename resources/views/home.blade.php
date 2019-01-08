@@ -14,7 +14,7 @@ Bienvenid@ al Sistema de Panaderia Lila
 		<div class="col-lg-10 col-12">
 			<div class="row justify-content-between text-center">
 				{{-- contenedor de citas --}}
-
+				@can('gestionar_ordenes')
 				<div class="col-12 col-md-4 col-xl-3 px-md-0" name="citas">
 					<div class="row">
 						<div class="col-12">
@@ -102,7 +102,8 @@ Bienvenid@ al Sistema de Panaderia Lila
 						</div>
 					</div>
 				</div>
-
+				@endcan
+				@can('gestionar_productos')
 				{{-- ##################################### --}}
 				{{-- contenedor de procedimientos --}}
 				<div class="col-12 col-md-4 col-xl-3" name="procedimientos">
@@ -120,7 +121,8 @@ Bienvenid@ al Sistema de Panaderia Lila
 						</div>
 					</div>
 				</div>
-
+				@endcan
+				@can('gestionar_usuarios')
 				{{-- ##################################### --}}
 				{{-- contenedor de procedimientos --}}
 				<div class="col-12 col-md-4 col-xl-3" name="procedimientos">
@@ -138,7 +140,8 @@ Bienvenid@ al Sistema de Panaderia Lila
 						</div>
 					</div>
 				</div>
-
+				@endcan
+				@can('gestionar_categoria')
 				{{-- ##################################### --}}
 				{{-- contenedor de procedimientos --}}
 				<div class="col-12 col-md-4 col-xl-3" name="procedimientos">
@@ -156,7 +159,8 @@ Bienvenid@ al Sistema de Panaderia Lila
 						</div>
 					</div>
 				</div>
-
+					@endcan
+				@can('gestionar_mesas')
 				{{-- ##################################### --}}
 				{{-- contenedor de procedimientos --}}
 				<div class="col-12 col-md-4 col-xl-3" name="procedimientos">
@@ -173,10 +177,9 @@ Bienvenid@ al Sistema de Panaderia Lila
 							</a>
 						</div>
 					</div>
-
-
 				</div>
-
+					@endcan
+					@can('gestionar_costeo')
 				<div class="col-12 col-md-4 col-xl-3" name="procedimientos">
 					<div class="row">
 						<div class="col-12">
@@ -192,7 +195,8 @@ Bienvenid@ al Sistema de Panaderia Lila
 						</div>
 					</div>
 				</div>
-
+					@endcan
+					@can('gestionar_recetas')
 				<div class="col-12 col-md-4 col-xl-3" name="procedimientos">
 					<div class="row">
 						<div class="col-12">
@@ -208,8 +212,8 @@ Bienvenid@ al Sistema de Panaderia Lila
 						</div>
 					</div>
 				</div>
-
-
+					@endcan
+					@can('gestionar_materia')
 				<div class="col-12 col-md-4 col-xl-3" name="procedimientos">
 					<div class="row">
 						<div class="col-12">
@@ -225,7 +229,7 @@ Bienvenid@ al Sistema de Panaderia Lila
 						</div>
 					</div>
 				</div>
-
+					@endcan
 
 			</div>
 		</div>

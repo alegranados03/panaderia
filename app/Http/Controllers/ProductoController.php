@@ -28,6 +28,8 @@ class ProductoController extends Controller
     //Referencia al middleware
     public function __construct(){
       //$this->middleware('auth');
+      $this->middleware('has.permission:gestionar_producto',
+      ['except'=>['mostrarCategorias','mostrarProductos','verCarrito','agregarACarrito','disminuirUno','quitarProducto','agregarVarios']]);
     }
 
 
@@ -143,11 +145,20 @@ class ProductoController extends Controller
         return view('cliente.productosCat',compact('categorias'));
     }
 
+
     public function mostrarProductos($id)
     {$categorias=Categoria::all();
-      $productos=Producto::where('categoria_id','=',$id)
-      ->where('stock','>',0)
-      ->get();
+      if($id!=0){
+        $productos=Producto::where('categoria_id','=',$id)
+        ->where('stock','>',0)
+        ->get();
+      }else{
+        $productos=Producto::where('categoria_id','<>',$id)
+        ->where('stock','>',0)
+        ->orderBy('categoria_id')
+        ->get();
+      }
+
         return view('cliente.productos',compact('productos','categorias'));
     }
 
