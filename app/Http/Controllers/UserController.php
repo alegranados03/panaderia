@@ -76,7 +76,7 @@ class UserController extends Controller
                                                   });
       }
 
-     return redirect()->action('UserController@index')->with('info','Usuario Registrado')->with('tipo','success');
+     return redirect()->action('UserController@index')->with('msj','Usuario Registrado');
     }catch(Exception $e){
       return back()->with('msj2','Usuario no registrado, es posible que el username ya se encuentre registrado');
     }
@@ -139,7 +139,7 @@ class UserController extends Controller
         $user->segundoApellido=$request->segundoApellido;
         $user->save();
         $user->roles()->sync($request->get('role'));
-      return redirect()->action('UserController@index')->with('msj','#');
+      return redirect()->action('UserController@index')->with('msj','Actualizado con éxito');
       }catch(Exception $e){
         return back()->with('msj2','Usuario no editado,revise los datos proporcionados');
       }
@@ -190,7 +190,7 @@ class UserController extends Controller
       $nueva_password=$request->password;
       $user->password=bcrypt($nueva_password);
       $user->save();
-        return redirect()->action('TiendaController@miperfil');
+        return redirect()->action('TiendaController@miperfil')->with('msj','Contraseña actualizada con éxito');
 
 
     }else{

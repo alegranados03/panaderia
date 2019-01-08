@@ -82,7 +82,7 @@ class CosteoController extends Controller
         $detalleLote->cantidad_unidades = $cantidad;
         $detalleLote->save();
 
-        return redirect()->action('CosteoController@index')->with('msj','Costeo agregada con éxito');
+        return redirect()->action('CosteoController@index')->with('msj','Costeo agregado con éxito');
     }
 
     /**

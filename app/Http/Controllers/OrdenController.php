@@ -49,17 +49,22 @@ class OrdenController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $orden = new Orden();
-        $orden->codigo_seguimiento = substr(microtime(),11,strlen(microtime())-11);
-        $orden->estado_servicio = $request->estado_servicio;
-        $orden->estado_servicio="PENDIENTE";
-        $orden->estado_pago="SIN CANCELAR";
-        $orden->tipo_orden="LOCAL";
-        $orden->mesa_id = $request->mesa_id;
-        $orden->user_id=auth()->user()->id;
-        $orden->save();
-        return redirect()->action('OrdenController@agregarDetalle',['id' =>$orden->id]);
+    { try {
+      $orden = new Orden();
+      $orden->codigo_seguimiento = substr(microtime(),11,strlen(microtime())-11);
+      $orden->estado_servicio = $request->estado_servicio;
+      $orden->estado_servicio="PENDIENTE";
+      $orden->estado_pago="SIN CANCELAR";
+      $orden->tipo_orden="LOCAL";
+      $orden->mesa_id = $request->mesa_id;
+      $orden->user_id=auth()->user()->id;
+      $orden->save();
+      return redirect()->action('OrdenController@agregarDetalle',['id' =>$orden->id])->with('msj','Orden Creada con éxito');
+    } catch (Exception $e) {
+      return back()->with('msj','Hubo un error al crear la orden');
+    }
+
+
     }
 
     /**
@@ -132,7 +137,7 @@ class OrdenController extends Controller
             $orden->update();
             return redirect()->action('OrdenController@index');
         } catch (Exception $e) {
-
+          return back()->with('msj','Hubo un error al crear la orden');
         }
     }
 
@@ -232,7 +237,7 @@ class OrdenController extends Controller
                 }
                 return redirect()->action('OrdenController@index');
             } catch (Exception $e) {
-
+                return back()->with('msj','Hubo un error al agregar detalles a la orden');
             }
         }else{
             return redirect()->back();
@@ -264,7 +269,7 @@ class OrdenController extends Controller
           $sobre=$detalle->cantidad_producto - $request[$prod];
 
           if($sobre<0){
-            return redirect()->action('OrdenController@quitarDetalle',['id'=>$request->idOrden])->with('mensaje');
+            return redirect()->action('OrdenController@quitarDetalle',['id'=>$request->idOrden])->with('msj','Hubo un error al quitar detalles a la orden');
           }
           if($sobre>0){
             $detalle->cantidad_producto=$sobre;
@@ -281,7 +286,7 @@ class OrdenController extends Controller
         } //fpreach
 return redirect()->action('OrdenController@index');
 }else{
-  return redirect()->back();
+  return back()->with('msj','Hubo un error al quitar detalles a la orden');
 }
 
      }

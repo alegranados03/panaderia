@@ -53,7 +53,7 @@ class PagoController extends Controller
 
               //se crea la orden y se asocian los datos y se crea en la base
               if($carrito->elementos!=null){
-              
+
                 $orden=new Orden();
                 $orden->codigo_seguimiento=substr(microtime(),11,strlen(microtime())-11);
                 $orden->estado_servicio="PENDIENTE";
@@ -61,7 +61,7 @@ class PagoController extends Controller
                 $orden->tipo_orden="EN LINEA";
                 $orden->user_id=auth()->user()->id;
               }else{
-                return back()->with('error');
+                return back()->with('msj','El carrito está vacío por favor antes de registrar un pago, llenalo de productos');
               }
 
               if($orden->save()){
@@ -75,7 +75,7 @@ class PagoController extends Controller
                   $request->session()->put('carrito',$carrito);
                   $orden->delete();
 
-                  return redirect()->action('ProductoController@verCarrito')->with('error');
+                  return redirect()->action('ProductoController@verCarrito')->with('msj','Error, se ha agregado más de un producto al carrito de lo que hay en la tienda, producto retirado');
                 }else{
                   $prodx->stock=$prodx->stock - $producto['cantidad'];
                   $prodx->update();
@@ -105,7 +105,7 @@ class PagoController extends Controller
                 //se elimina el carrito
                 $carrito=null;
                 $request->session()->put('carrito',$carrito);
-          return redirect()->action('TiendaController@index')->with('compra realizada con éxito, puede pasar a retirar su compra con el número de orden: '.$orden->codigo_seguimiento);
+          return redirect()->action('TiendaController@index')->with('msj','compra realizada con éxito, puede pasar a retirar su compra con el número de orden: '.$orden->codigo_seguimiento);
 
         } catch (Exception $e) {
 
@@ -186,7 +186,7 @@ class PagoController extends Controller
                 $pago->cambio=$request->cambio;
 
             }else{
-              return redirect()->back()->with('');
+              return redirect()->back()->with('msj','Hubo un error al registrar el pago, por favor verifique información');
             }
           }else if($request->tarjeta_credito2!=null && strlen($request->tarjeta_credito2)==19){ //verifica tamaño de tarjeta de credito
                 $pago->tipo_pago="Tarjeta Crédito";
@@ -195,7 +195,7 @@ class PagoController extends Controller
                 $pago->tarjeta_credito=$request->tarjeta_credito2;
                 $pago->cambio="0.0";
               }else{
-                return redirect()->back()->with('');
+              return redirect()->back()->with('msj','Hubo un error al registrar el pago, por favor verifique información');
               }
 
 
@@ -203,16 +203,16 @@ class PagoController extends Controller
               $orden->estado_servicio="ENTREGADA";
               $orden->estado_pago="CANCELADA";
               $orden->save();
-              return redirect()->action('OrdenController@index');
+              return redirect()->action('OrdenController@index')->with('msj','Pago exitoso');
             }
           }else{
-          return redirect()->back()->with('');
+          return redirect()->back()->with('msj','Hubo un error al registrar el pago, por favor verifique información');
            }
 
 
 
       } catch (Exception $e) {
-
+        return redirect()->back()->with('msj','Hubo un error al registrar el pago, por favor verifique información');
       }
 
 

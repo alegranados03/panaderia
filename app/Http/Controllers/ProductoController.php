@@ -68,7 +68,7 @@ class ProductoController extends Controller
           return redirect()->action('ProductoController@index',['producto' =>$producto->id])->with('msj','Producto agregado con éxito');
         }catch(Exception $e)
           {
-
+            return redirect()->back()->with('msj','Hubo un error al agregar el producto');
         }
     }
 
@@ -120,7 +120,7 @@ class ProductoController extends Controller
         return redirect()->action('ProductoController@index',['producto' =>$producto->id])->with('msj','Producto editado con éxito');
       }catch(Exception $e)
         {
-
+          return redirect()->back()->with('msj','Hubo un error al editar el producto');
       }
     }
 
@@ -216,7 +216,7 @@ class ProductoController extends Controller
       $carrito->agregarVarios($producto,$producto->id,$cantidad);
 
       $request->session()->put('carrito',$carrito);
-      return redirect()->back()->with('info','Agregado con exito')->with('tipo', 'success');
+      return redirect()->back()->with('msj','Agregado con exito');
     }
 
 }
