@@ -53,7 +53,7 @@ class MesaController extends Controller
             return redirect()->action('MesaController@index',["mesa"=>$mesa->id])->with('msj','Mesa registrada con exito');
           }
         } catch (Exception $e) {
-
+          return redirect()->back()->with('msj','Mesa no registrada hubo un error');
         }
 
     }
@@ -104,7 +104,7 @@ class MesaController extends Controller
 
 
       } catch (Exception $e) {
-
+return redirect()->back()->with('msj','Mesa no registrada hubo un error');
       }
     }
 
