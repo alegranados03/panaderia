@@ -7,7 +7,7 @@
     <div class="container">
         <center><h2>Seleccionar materiales para producto {{$producto->nombre_producto}}</h2></center>
         {{ Form::open(['route' => 'recetas.store', 'method' => 'POST','class' => 'form-group', 'autocomplete' => 'off', 'files'=>true])}}
-        <input value="{{$producto->id}}" type="number" name="producto_id">
+        <input value="{{$producto->id}}" type="number" name="producto_id" style="visibility: hidden">
         <table class="table table-striped">
             <thead>
             <tr>

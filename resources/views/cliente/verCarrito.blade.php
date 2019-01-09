@@ -17,6 +17,7 @@ Carrito
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<div class="cart_container">
+
 						<div class="cart_title" align="center"><h1>Carrito de Compras</h1></div>
 								@if(Session::has('carrito'))
 									<div class="cart_items">

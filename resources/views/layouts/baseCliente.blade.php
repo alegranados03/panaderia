@@ -148,6 +148,12 @@
 
               <!-- Cart -->
               <div class="cart">
+                @if(session()->has('msj'))
+                  <div class="alert alert-success" role="alert">{{session('msj')}}</div>
+                @endif
+                @if(session()->has('msj2'))
+                  <div class="alert alert-danger" role="alert">{{session('msj2')}}</div>
+                @endif
                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                   <div class="cart_icon">
                     <a href="{{url('/vercarrito')}}"><img src="{{asset('OneTech/images/cart.png')}}" alt=""></a>

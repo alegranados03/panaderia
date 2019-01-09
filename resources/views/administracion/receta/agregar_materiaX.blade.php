@@ -17,7 +17,7 @@
            <div class="panel-body">
                {{ Form::open(['route' => 'insertarmxStore', 'method' => 'POST','class' => 'form-group', 'autocomplete' => 'off', 'files'=>true])}}
                <div class="form-group">
-                   <label>Numero de receta:<input type="number" value="{{$receta->id}}" class="form-control" name="idReceta"></label>
+                   <label>Numero de receta:<input type="number" value="{{$receta->id}}" class="form-control" name="idReceta" readonly></label>
                </div>
                <div class="form-group">
                    <label>

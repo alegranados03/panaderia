@@ -11,6 +11,12 @@ Historial de Ordenes en Linea
                 <div class="row">
                 	<div class="col-md-1">
                 	</div>
+					@if(session()->has('msj'))
+						<div class="alert alert-success" role="alert">{{session('msj')}}</div>
+					@endif
+					@if(session()->has('msj2'))
+						<div class="alert alert-danger" role="alert">{{session('msj2')}}</div>
+					@endif
                 	<div class="col-md-9">
                 	    Lista de Ordenes
                 	</div>

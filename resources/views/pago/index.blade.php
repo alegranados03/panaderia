@@ -15,6 +15,12 @@ Pago
 	<div class="single_product" style="margin-top: 2%">
 		<div class="container">
 			<div class="row">
+				@if(session()->has('msj'))
+					<div class="alert alert-success" role="alert">{{session('msj')}}</div>
+				@endif
+				@if(session()->has('msj2'))
+					<div class="alert alert-danger" role="alert">{{session('msj2')}}</div>
+				@endif
 				<div class="col-md-3">
 					{!! Form::label('primerNombre','Primer Nombre') !!}
 					{!! Form::text('primerNombre',Auth::user()->primerNombre,['class'=> 'form-control','readonly','style' => 'color:black;']) !!}

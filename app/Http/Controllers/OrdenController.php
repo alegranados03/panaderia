@@ -135,7 +135,7 @@ class OrdenController extends Controller
             $orden->mesa_id = $request->mesa_id;
             $orden->estado_servicio=$request->estado_servicio;
             $orden->update();
-            return redirect()->action('OrdenController@index');
+            return redirect()->action('OrdenController@index')->with('msj','Orden editada con exito');
         } catch (Exception $e) {
           return back()->with('msj','Hubo un error al crear la orden');
         }
@@ -155,7 +155,7 @@ class OrdenController extends Controller
         $orden->delete();
       }
 
-    return redirect()->action('OrdenController@index');
+    return redirect()->action('OrdenController@index')->with('msj','Orden eliminada con exito');
     } catch (Exception $e) {
 
     }
@@ -284,7 +284,7 @@ class OrdenController extends Controller
             $producto->update();
             }
         } //fpreach
-return redirect()->action('OrdenController@index');
+return redirect()->action('OrdenController@index')->with('msj','Detalles removido con exito');
 }else{
   return back()->with('msj','Hubo un error al quitar detalles a la orden');
 }
