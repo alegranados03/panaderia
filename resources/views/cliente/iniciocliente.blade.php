@@ -21,13 +21,13 @@ Tienda
     <div class="banner_background" style="background-image:url({{asset('OneTech/images/banner_background.jpg')}})"></div>
     <div class="container fill_height">
       <div class="row fill_height">
-        <div class="banner_product_image"><img src="{{asset('OneTech/images/banner_product.png')}}" alt=""></div>
+        <div class="banner_product_image"><img src="{{asset('OneTech/imagesPanaderia/banner5.png')}}" alt=""></div>
         <div class="col-lg-5 offset-lg-4 fill_height">
           <div class="banner_content">
-            <h1 class="banner_text">new era of smartphones</h1>
-            <div class="banner_price"><span>$530</span>$460</div>
-            <div class="banner_product_name">Apple Iphone 6s</div>
-            <div class="button banner_button"><a href="#">Shop Now</a></div>
+            <h1 class="banner_text">Pan de calidad ARTESANAL</h1>
+            <div class="banner_price"><span></span>Conoce nuestros precios</div>
+            <div class="banner_product_name"></div>
+          <!--  <div class="button banner_button"><a href="#"></a></div>-->
           </div>
         </div>
       </div>
@@ -40,50 +40,50 @@ Tienda
     <div class="container">
       <div class="row">
 
-        <!-- Char. Item -->
+
         <div class="col-lg-3 col-md-6 char_col">
 
           <div class="char_item d-flex flex-row align-items-center justify-content-start">
             <div class="char_icon"><img src="{{asset('OneTech/images/char_1.png')}}" alt=""></div>
             <div class="char_content">
-              <div class="char_title">Free Delivery</div>
-              <div class="char_subtitle">from $50</div>
+              <div class="char_title">Pedidos desde la comodidad de tu casa</div>
+              <div class="char_subtitle"></div>
             </div>
           </div>
         </div>
 
-        <!-- Char. Item -->
+
         <div class="col-lg-3 col-md-6 char_col">
 
           <div class="char_item d-flex flex-row align-items-center justify-content-start">
             <div class="char_icon"><img src="{{asset('OneTech/images/char_2.png')}}" alt=""></div>
             <div class="char_content">
-              <div class="char_title">Free Delivery</div>
-              <div class="char_subtitle">from $50</div>
+              <div class="char_title">Actualizamos nuestras recetas</div>
+              <div class="char_subtitle"></div>
             </div>
           </div>
         </div>
 
-        <!-- Char. Item -->
+
         <div class="col-lg-3 col-md-6 char_col">
 
           <div class="char_item d-flex flex-row align-items-center justify-content-start">
             <div class="char_icon"><img src="{{asset('OneTech/images/char_3.png')}}" alt=""></div>
             <div class="char_content">
-              <div class="char_title">Free Delivery</div>
-              <div class="char_subtitle">from $50</div>
+              <div class="char_title">Pago facil y rapido</div>
+              <div class="char_subtitle"></div>
             </div>
           </div>
         </div>
 
-        <!-- Char. Item -->
+
         <div class="col-lg-3 col-md-6 char_col">
 
           <div class="char_item d-flex flex-row align-items-center justify-content-start">
             <div class="char_icon"><img src="{{asset('OneTech/images/char_4.png')}}" alt=""></div>
             <div class="char_content">
-              <div class="char_title">Free Delivery</div>
-              <div class="char_subtitle">from $50</div>
+              <div class="char_title">Producto 100% original</div>
+              <div class="char_subtitle"></div>
             </div>
           </div>
         </div>
@@ -222,17 +222,17 @@ Tienda
               <div class="row fill_height">
                 <div class="col-lg-4 col-md-6 fill_height">
                   <div class="banner_2_content">
-                    <div class="banner_2_category">Laptops</div>
-                    <div class="banner_2_title">MacBook Air 13</div>
-                    <div class="banner_2_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</div>
+                    <div class="banner_2_category">Pan</div>
+                    <div class="banner_2_title">Varidades de Pan Frances</div>
+
                     <div class="rating_r rating_r_4 banner_2_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                    <div class="button banner_2_button"><a href="#">Explore</a></div>
+                      <div class="button banner_2_button"><a href="#" class="btn btn-warning">Explore</a></div>
                   </div>
 
                 </div>
                 <div class="col-lg-8 col-md-6 fill_height">
                   <div class="banner_2_image_container">
-                    <div class="banner_2_image"><img src="{{asset('OneTech/images/banner_2_product.png')}}" alt=""></div>
+                    <div class="banner_2_image"><img src="{{asset('OneTech/imagesPanaderia/pan.jpg')}}" alt=""></div>
                   </div>
                 </div>
               </div>
@@ -247,17 +247,17 @@ Tienda
               <div class="row fill_height">
                 <div class="col-lg-4 col-md-6 fill_height">
                   <div class="banner_2_content">
-                    <div class="banner_2_category">Laptops</div>
-                    <div class="banner_2_title">MacBook Air 13</div>
-                    <div class="banner_2_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</div>
+                    <div class="banner_2_category">Cafe</div>
+                    <div class="banner_2_title">Variedades de Cafe</div>
+
                     <div class="rating_r rating_r_4 banner_2_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                    <div class="button banner_2_button"><a href="#">Explore</a></div>
+                    <div class="button banner_2_button"><a href="#" class="btn btn-warning">Explore</a></div>
                   </div>
 
                 </div>
                 <div class="col-lg-8 col-md-6 fill_height">
                   <div class="banner_2_image_container">
-                    <div class="banner_2_image"><img src="{{asset('OneTech/images/banner_2_product.png')}}" alt=""></div>
+                    <div class="banner_2_image"><img src="{{asset('OneTech/imagesPanaderia/cafe2.jpg')}}" alt=""></div>
                   </div>
                 </div>
               </div>
@@ -272,17 +272,17 @@ Tienda
               <div class="row fill_height">
                 <div class="col-lg-4 col-md-6 fill_height">
                   <div class="banner_2_content">
-                    <div class="banner_2_category">Laptops</div>
-                    <div class="banner_2_title">MacBook Air 13</div>
-                    <div class="banner_2_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</div>
+                    <div class="banner_2_category">Dulce</div>
+                    <div class="banner_2_title">Variedades de Pan Dulce</div>
+
                     <div class="rating_r rating_r_4 banner_2_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                    <div class="button banner_2_button"><a href="#">Explore</a></div>
+                      <div class="button banner_2_button"><a href="#" class="btn btn-warning">Explore</a></div>
                   </div>
 
                 </div>
                 <div class="col-lg-8 col-md-6 fill_height">
                   <div class="banner_2_image_container">
-                    <div class="banner_2_image"><img src="{{asset('OneTech/images/banner_2_product.png')}}" alt=""></div>
+                    <div class="banner_2_image"><img src="{{asset('OneTech/imagesPanaderia/banner2.png')}}" alt=""></div>
                   </div>
                 </div>
               </div>
