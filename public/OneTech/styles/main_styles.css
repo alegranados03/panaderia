@@ -3547,7 +3547,7 @@ select option
 {
 	font-size: 18px;
 	font-weight: 500;
-	color: #0e8ce4;
+	color: #cb7d42;
 	margin-top: 13px;
 }
 .footer_contact_text
@@ -3609,7 +3609,7 @@ select option
 {
 	font-size: 12px;
 	font-weight: 500;
-	color: rgba(0,0,0,0.4);
+	color: rgba(196, 93, 48, 0.4);
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -3618,7 +3618,7 @@ select option
 }
 .footer_list li a:hover
 {
-	color: #0e8ce4;
+	color: #cb7d42;
 }
 .footer_list_2
 {
