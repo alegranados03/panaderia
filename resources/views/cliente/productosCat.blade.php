@@ -42,7 +42,11 @@ Detalle del Producto
               @foreach($categorias as $cat)
               <div class="col-md-3">
                 <div class="card" style="width: 18rem;margin-bottom:5%">
+                  @if($cat->imagen==null)
                   <img class="card-img-top" src="{{asset('img/Hersheys.jpg')}}" alt="Card image cap">
+                  @else
+                  <img class="card-img-top" src="{{asset('img/Hersheys.jpg')}}" alt="Card image cap">
+                  @endif
                   <div class="card-body">
                     <h5 class="card-title">{{$cat->nombre_categoria}}</h5>
                     <p class="card-text" style="text-align: justify;">{{$cat->descripcion}}</p>

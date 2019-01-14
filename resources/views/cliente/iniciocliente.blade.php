@@ -120,7 +120,7 @@ Tienda
 
                     <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
                       <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                        <img src="{{$producto->imagen}}" alt="">
+                        <a href="{{route('tienda.show',['id'=>$producto->id])}}"><img src="{{$producto->imagen}}" alt=""></a>
                       </div>
                       <div class="product_content">
                         <div class="product_price discount">{{'$'." ".$producto->precio}}</div>
@@ -149,7 +149,7 @@ Tienda
 
                     <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
                       <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                        <img src="{{$producto->imagen}}" alt="">
+                      <a href="{{route('tienda.show',['id'=>$producto->id])}}">  <img src="{{$producto->imagen}}" alt=""> </a>
                       </div>
                       <div class="product_content">
                         <div class="product_price discount">{{'$'." ".$producto->precio}}</div>
@@ -178,7 +178,7 @@ Tienda
 
                     <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
                       <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                        <img src="{{$producto->imagen}}" alt="">
+                  <a href="{{route('tienda.show',['id'=>$producto->id])}}">      <img src="{{$producto->imagen}}" alt=""> </a>
                       </div>
                       <div class="product_content">
                         <div class="product_price discount">{{'$'." ".$producto->precio}}</div>

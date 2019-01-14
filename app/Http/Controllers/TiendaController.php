@@ -30,7 +30,7 @@ class TiendaController extends Controller
       $pasteleria=Producto::where('categoria_id','=',$categoria)->take(8)->get();
       $categoria=Categoria::select('id')->where('nombre_categoria','=','Pan Dulce')->value('id');
       $pan=Producto::where('categoria_id','=',$categoria)->take(8)->get();
-      $categoria=Categoria::select('id')->where('nombre_categoria','=','Bebidas')->value('id');
+      $categoria=Categoria::select('id')->where('nombre_categoria','LIKE','Bebidas%')->value('id');
       $bebidas=Producto::where('categoria_id','=',$categoria)->take(8)->get();
       $categorias=Categoria::all();
 

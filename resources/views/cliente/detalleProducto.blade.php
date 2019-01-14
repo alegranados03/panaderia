@@ -61,7 +61,7 @@ Detalle del Producto
 
 								</div>
 
-								<div class="product_price">{{$producto->precio}}</div>
+								<div class="product_price">$ {{$producto->precio}}</div>
 								<div class="button_container">
 					<a id="agregarV" name="agregarV" href=""><button type="button" class="button cart_button"> <i class="fa fa-shopping-cart"></i> Agregar al Carrito</button></a>
 								</div>
@@ -100,4 +100,3 @@ $(document).ready(function(){
 });
 </script>
 @endsection
-
