@@ -54,7 +54,7 @@ App\Producto::create([  'nombre_producto' =>'Horchata',  'stock' =>'20',  'categ
 App\Producto::create([  'nombre_producto' =>'Frozen de Horchata',  'stock' =>'20',  'categoria_id'=>'9',  'imagen'=>'http://127.0.0.1:8000/imagenes/31.jpg',  'precio'=>'3',  'descripcion'=>'Frozen de Horchata ']);
 App\Producto::create([  'nombre_producto' =>'Coca Cola',  'stock' =>'20',  'categoria_id'=>'9',  'imagen'=>'http://127.0.0.1:8000/imagenes/32.jpg',  'precio'=>'1.5',  'descripcion'=>'Coca Cola ']);
 App\Producto::create([  'nombre_producto' =>'Fanta ',  'stock' =>'20',  'categoria_id'=>'9',  'imagen'=>'http://127.0.0.1:8000/imagenes/33.jpg',  'precio'=>'1.5',  'descripcion'=>'Fanta  ']);
-App\Producto::create([  'nombre_producto' =>'Tropical Uva',  'stock' =>'20',  'categoria_id'=>'9',  'imagen'=>'http://127.0.0.1:8000/imagenes/34.jpg',  'precio'=>'1.5',  'descripcion'=>'Tropical Uva ']);
+
 App\Producto::create([  'nombre_producto' =>'Tropical Fresa',  'stock' =>'20',  'categoria_id'=>'9',  'imagen'=>'http://127.0.0.1:8000/imagenes/35.jpg',  'precio'=>'1.5',  'descripcion'=>'Tropical Fresa ']);
 App\Producto::create([  'nombre_producto' =>'Kolashampan',  'stock' =>'20',  'categoria_id'=>'9',  'imagen'=>'http://127.0.0.1:8000/imagenes/36.jpg',  'precio'=>'1',  'descripcion'=>'Kolashampan ']);
 App\Producto::create([  'nombre_producto' =>'Jugo de naranja',  'stock' =>'20',  'categoria_id'=>'9',  'imagen'=>'http://127.0.0.1:8000/imagenes/37.jpg',  'precio'=>'2.5',  'descripcion'=>'Jugo de naranja ']);
