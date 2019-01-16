@@ -105,7 +105,7 @@
           <!-- Logo -->
           <div class="col-lg-3 col-sm-3 col-3 order-1">
             <div class="logo_container">
-              <div class="logo"><a href="{{ url('/') }}">Panaderia Lila</a></div>
+              <div class="logo"><a style="color: #000000" href="{{ url('/') }}">Panaderia Lila</a></div>
             </div>
           </div>
 
