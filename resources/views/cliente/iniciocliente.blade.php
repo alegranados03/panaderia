@@ -302,41 +302,41 @@ Tienda
 
         <div class="col-lg-4 advert_col">
 
-          <!-- Advert Item -->
+           Advert Item
 
           <div class="advert d-flex flex-row align-items-center justify-content-start">
             <div class="advert_content">
-              <div class="advert_title"><a href="#">Trends 2018</a></div>
-              <div class="advert_text">Lorem ipsum dolor sit amet, consectetur adipiscing Donec et.</div>
+              <div class="advert_title"><a href="#">Panes 2018</a></div>
+              <div class="advert_text">La calidad de nuestros Panes.</div>
             </div>
-            <div class="ml-auto"><div class="advert_image"><img src="{{asset('OneTech/images/adv_1.png')}}" alt=""></div></div>
+
           </div>
         </div>
 
         <div class="col-lg-4 advert_col">
 
-          <!-- Advert Item -->
+           Advert Item
 
           <div class="advert d-flex flex-row align-items-center justify-content-start">
             <div class="advert_content">
-              <div class="advert_subtitle">Trends 2018</div>
+              <div class="advert_subtitle">Panes 2019</div>
               <div class="advert_title_2"><a href="#">Sale -45%</a></div>
-              <div class="advert_text">Lorem ipsum dolor sit amet, consectetur.</div>
+              <div class="advert_text">Este 2019 te esperan una gran variedad de nuevos panes.</div>
             </div>
-            <div class="ml-auto"><div class="advert_image"><img src="{{asset('OneTech/images/adv_2.png')}}" alt=""></div></div>
+
           </div>
         </div>
 
         <div class="col-lg-4 advert_col">
 
-          <!-- Advert Item -->
+           Advert Item
 
           <div class="advert d-flex flex-row align-items-center justify-content-start">
             <div class="advert_content">
-              <div class="advert_title"><a href="#">Trends 2018</a></div>
-              <div class="advert_text">Lorem ipsum dolor sit amet, consectetur.</div>
+              <div class="advert_title"><a href="#">Novedad</a></div>
+              <div class="advert_text">Tendremos nuevas recetas para ti.</div>
             </div>
-            <div class="ml-auto"><div class="advert_image"><img src="{{asset('OneTech/images/adv_3.png')}}" alt=""></div></div>
+
           </div>
         </div>
 
