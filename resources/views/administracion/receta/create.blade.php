@@ -22,13 +22,13 @@
                 <td>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" name="material[]" class="form-check-input" value="{{$material->id}}">{{$material->nombre_materia}}
+                            <input type="checkbox" name="material[]" onclick = "habilitarCantidad(this)" class="form-check-input" id="{{$material->id}}" value="{{$material->id}}">{{$material->nombre_materia}}
                         </label>
                     </div>
                 </td>
                 <div class="row">
                     <div class="col">
-                        <td><input class="" type="number" step="0.01" name="cantidad[]"  pattern="^\d*(\.\d{0,2})?$"  title="Introducir valor numerico positivo con 2 decimales" placeholder="0.00" min="0" max="1000000"></td>
+                        <td><input class="" disabled id="input{{$material->id}}" type="number" step="0.01" name="cantidad[]"  pattern="^\d*(\.\d{0,2})?$"  title="Introducir valor numerico positivo con 2 decimales" placeholder="0.00" min="0" max="1000000"></td>
                     </div>
                     <div class="col">
 
@@ -47,6 +47,14 @@
     </div>
 
     <script >
-
+        function habilitarCantidad(input) {
+            var idMaterial = input.value;
+            if (!document.getElementById(idMaterial).checked) {
+                document.getElementById("input"+idMaterial).disabled = true;
+                document.getElementById("input"+idMaterial).value = "";
+            }else{
+                document.getElementById("input"+idMaterial).disabled = false;
+            }
+        }
     </script>
 @endsection
