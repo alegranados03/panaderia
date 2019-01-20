@@ -7,7 +7,7 @@
     <div class="col-md-8">
       <div class="card">
         <br><br><br>
-        <h1><div class="card-header">{{ __('Registrar Nuevo Material') }}</div></h1>
+        <h1><div class="card-header">{{ __('Editar Material') }}</div></h1>
         <div class="card-body">
           @if(session()->has('msj'))
           <div class="alert alert-success" role="alert">{{session('msj')}}</div>

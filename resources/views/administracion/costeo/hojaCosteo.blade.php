@@ -12,38 +12,38 @@
             <div class="col-md-12">
                 <div class="col-sm-6">
 
-                    <div class="form-inline">
+                    <div class="form-group">
                         <label for="">Produccion(Articulo):</label>
                         <input for="" class="form-control" name="producto" value="{{$valor2->nombre_producto}}" required readonly>
 
                     </div>
-                    <div class="form-inline">
+                    <div class="form-group">
                         <label for="">No de Lote:</label>
                         <input type="text" class="form-control" value="{{$orden}}" name="codigoLote" required readonly>
                     </div>
-                    <div class="form-inline">
+                    <div class="form-group">
                         <label for="">Cantidad unidades:</label>
                         <input type="number" class="form-control" id="cantidad" name="cantidad" onChange="importes()" pattern="[0-9]{1,3}" title="Introducir valor numerico positivo " placeholder="0.00" min="0" max="1000000" required>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="form-inline">
+                    <div class="form-group">
                         <label for="">#Obreros:</label>
                         <input type="number" class="form-control" name="obreros"  id="obreros" onChange="calcular()" pattern="[0-9]{1,3}" title="Introducir valor numerico positivo" placeholder="0" min="0" max="1000000" required>
                     </div>
-                    <div class="form-inline">
+                    <div class="form-group">
                         <label for="">#Horas:</label>
                         <input type="number" class="form-control" name="horas" id="horas" step="any"  onChange="calcular()" pattern="^\d*(\.\d{0,2})?$"  title="Introducir valor numerico positivo con 2 decimales" placeholder="0.00" min="0" max="1000000" required>
                     </div>
-                    <div class="form-inline">
+                    <div class="form-group">
                         <label for="">P/hora:</label>
                         <input type="number" class="form-control" name="phora" id="phora" step="any"  onChange="calcular()" pattern="^\d*(\.\d{0,2})?$"  title="Introducir valor numerico positivo con 2 decimales" placeholder="0.00" min="0" max="1000000" required>
                     </div>
-                    <div class="form-inline">
+                    <div class="form-group">
                         <label for="">Sub-total MO:</label>
                         <input type="number" class="form-control" name="subtotal" id="subtotal" step="any"  onchange="importes()" required readonly>
                     </div>
-                    <div class="form-inline">
+                    <div class="form-group">
                         <label for="">Tasa CIF %:</label>
                         <input type="number" class="form-control" name="tasa" id="tasa" step="any"  onchange="importes()" pattern="^\d*(\.\d{0,2})?$"  title="Introducir valor numerico positivo con 2 decimales" placeholder="0.00" min="0" max="1000000" required>
                     </div>

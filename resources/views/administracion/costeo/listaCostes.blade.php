@@ -44,7 +44,7 @@
                 @if(count($costeo)>0)
                     @foreach($costeo as $coste)
                         <tr>
-                            <td>{{$coste->codigoLote}}</td>
+                            <td>{{$coste->id}}</td>
                             <td>{{$coste->producto}}</td>
                             <td>{{$coste->total}}</td>
                             <td>{{$coste->created_at}}</td>
