@@ -49,9 +49,11 @@ class CategoriaController extends Controller
     public function store(CategoriaForm $request)
     {
       $direccion=Storage::disk('public')->put('imagenes',$request->file('imagen'));
+
       try{
         $categoria=new Categoria($request->all());
-        $categoria->fill(['imagen'=>asset($direccion)])->save();
+        $categoria->imagen=asset($direccion);
+
         $categoria->save();
         return redirect()->action('CategoriaController@index')->with('msj','Categoria agregada con éxito');
       }catch(Exception $e)
@@ -96,7 +98,8 @@ class CategoriaController extends Controller
         $categoria->descripcion=$request->descripcion;
         if($request->file('imagen')){
         $direccion=Storage::disk('public')->put('imagenes',$request->file('imagen'));
-        $categoria->fill(['imagen'=>asset($direccion)])->save();}else{
+        $categoria->imagen=asset($direccion);
+        $categoria->save();}else{
           $categoria->update();
       }
       return redirect()->action('CategoriaController@index',['$categoria' =>$categoria->id])->with('msj','Producto editado con éxito');

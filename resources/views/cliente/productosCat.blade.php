@@ -45,7 +45,7 @@ Detalle del Producto
                   @if($cat->imagen==null)
                   <img class="card-img-top" src="{{asset('img/Hersheys.jpg')}}" alt="Card image cap">
                   @else
-                  <img class="card-img-top" src="{{asset('img/Hersheys.jpg')}}" alt="Card image cap">
+                  <img class="card-img-top" src="{{$cat->imagen}}" alt="Card image cap">
                   @endif
                   <div class="card-body">
                     <h5 class="card-title">{{$cat->nombre_categoria}}</h5>

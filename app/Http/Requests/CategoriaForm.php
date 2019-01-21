@@ -25,7 +25,7 @@ class CategoriaForm extends FormRequest
     {
         return [
             'nombre_categoria'=> 'required|string|max:50|regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/',
-            'imagen'=>'required|image',
+            'imagen'=>'image',
         ];
     }
 }

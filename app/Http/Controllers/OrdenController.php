@@ -153,9 +153,12 @@ class OrdenController extends Controller
         $orden=Orden::findOrFail($id);
       if($orden->estado_pago=="SIN CANCELAR"){
         $orden->delete();
+        return redirect()->action('OrdenController@index')->with('msj','Orden eliminada con exito');
+      }else{
+        return redirect()->action('OrdenController@index')->with('msj2','Orden NO SE PUEDE ELIMINAR');
       }
 
-    return redirect()->action('OrdenController@index')->with('msj','Orden eliminada con exito');
+
     } catch (Exception $e) {
 
     }
