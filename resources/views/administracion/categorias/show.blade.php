@@ -14,6 +14,12 @@ Detalle Categoría
 	</div>
 
 	<br/>
+	<div class="col-md-12">
+		{{ Form::label('imagen','Imagen de Categoria') }}
+		<br/>
+		<img src="{{$categoria->imagen}}" height="300px" width="300px">
+		</div>
+	<br/>
 
 	<div class="row">
 		<div class="col-md-12">
