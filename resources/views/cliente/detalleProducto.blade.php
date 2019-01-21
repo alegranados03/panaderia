@@ -42,6 +42,7 @@ Detalle del Producto
 						<div class="product_category">{{$categoriaP->nombre_categoria}}</div>
 						<div class="product_name">{{$producto->nombre_producto}}</div>
 						<div class="product_text"><p>{{$producto->descripcion}}</p></div>
+						<div class="product_text"><p>Existencia en tienda: {{$producto->stock}}</p></div>
 						<div class="order_info d-flex flex-row">
 							<form action="#">
 								<div class="clearfix" style="z-index: 1000;">
@@ -49,7 +50,7 @@ Detalle del Producto
 									<!-- Product Quantity -->
 									<div class="product_quantity clearfix">
 										<span>Cantidad: </span>
-										<input id="quantity_input" name="quantity_input" type="text" pattern="[0-9]*" value="1">
+										<input id="quantity_input" name="quantity_input" type="text" pattern="[0-9]*" value="1" max="{{$producto->stock}}">
 										<div class="quantity_buttons">
 											<div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fas fa-chevron-up"></i></div>
 											<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fas fa-chevron-down"></i></div>

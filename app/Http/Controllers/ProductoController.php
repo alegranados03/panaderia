@@ -213,7 +213,12 @@ class ProductoController extends Controller
       $producto = Producto::find($id);
       $carritoAnt=Session::has('carrito') ? Session::get('carrito') : null;
       $carrito= new Carrito($carritoAnt);
-      $carrito->agregarVarios($producto,$producto->id,$cantidad);
+      if($producto->stock>=$cantidad){
+        $carrito->agregarVarios($producto,$producto->id,$cantidad);
+      }else{
+        return redirect()->back()->with('msj','Se ha excedido con la cantidad disponible en tienda');
+      }
+
 
       $request->session()->put('carrito',$carrito);
       return redirect()->back()->with('msj','Agregado con exito');

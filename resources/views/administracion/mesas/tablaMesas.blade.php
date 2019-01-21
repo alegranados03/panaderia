@@ -14,7 +14,6 @@
             <td class="center">
                 <a class="btn btn-info" href="{{route('mesas.show',['id'=> $mesa->id])}}"><i class="fa fa-eye"></i> Ver</a>
                 <a class="btn btn-primary" href="{{route('mesas.edit',['id'=> $mesa->id])}}"><i class="fa fa-edit"></i> Editar</a>
-                <a class="btn btn-danger" href="{{route('mesas.destroy',['id'=> $mesa->id])}}"><i class="fa fa-trash"></i> Deshabilitar</a>
             </td>
         </tr>
       @endforeach

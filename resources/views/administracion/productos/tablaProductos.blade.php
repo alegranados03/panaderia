@@ -18,7 +18,7 @@
             <td class="center">
                 <a class="btn btn-info" href="{{route('productos.show',['id'=> $producto->id])}}"><i class="fa fa-eye"></i> Ver</a>
                 <a class="btn btn-primary" href="{{route('productos.edit',['id'=> $producto->id])}}"><i class="fa fa-edit"></i> Editar</a>
-                <a class="btn btn-danger" href="{{route('productos.destroy',['id'=> $producto->id])}}"><i class="fa fa-trash"></i> Deshabilitar</a>
+              
             </td>
         </tr>
       @endforeach

@@ -14,7 +14,7 @@
             <td class="center">
                 <a class="btn btn-info" href="{{route('categorias.show',['id'=> $categoria->id])}}"><i class="fa fa-eye"></i> Ver</a>
                 <a class="btn btn-primary" href="{{route('categorias.edit',['id'=> $categoria->id])}}"><i class="fa fa-edit"></i> Editar</a>
-                <a class="btn btn-danger" href="{{route('categorias.destroy',['id'=> $categoria->id])}}"><i class="fa fa-trash"></i> Deshabilitar</a>
+          
             </td>
         </tr>
       @endforeach
