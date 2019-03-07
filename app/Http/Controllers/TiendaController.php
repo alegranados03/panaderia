@@ -37,6 +37,17 @@ class TiendaController extends Controller
     return view('cliente.iniciocliente',compact('pasteleria','pan','bebidas','categorias'));
     }
 
+    public function vistaPaypal()
+    {$carritoAnt=Session::has('carrito') ? Session::get('carrito') : null;
+      $carrito=new Carrito($carritoAnt);
+      if($carrito->elementos!=null){
+        $cantidadTotal=$carrito->precioTotal;
+        return view('paypals',compact('cantidadTotal'));
+      }else{
+        return back()->with('msj','El carrito está vacío por favor antes de registrar un pago, llenalo de productos');
+
+      }
+      }
     /**
      * Show the form for creating a new resource.
      *

@@ -17,7 +17,7 @@ class CreatePagosTable extends Migration
             $table->increments('id');
             $table->integer('orden_id')->unsigned();
             $table->foreign('orden_id')->references('id')->on('ordenes');
-            $table->ENUM('tipo_pago',['Efectivo','Tarjeta Crédito']);
+            $table->ENUM('tipo_pago',['Efectivo','Tarjeta Crédito','PayPal']);
             $table->string('tarjeta_credito')->nullable();
             $table->decimal('total_cancelar',8,2);
             $table->decimal('recibido',8,2);

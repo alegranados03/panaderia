@@ -94,6 +94,7 @@ Pago
 		    </div>
 		</div>
 	<br/>
+<a class="btn btn-md btn-primary" href="{{route('vistapaypal')}}">Pagar con PayPal</a>
 		@if(!is_null(Auth::user()->tarjeta_credito))
 	    <!-- Button trigger modal -->
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
@@ -112,7 +113,7 @@ Pago
 		        </button>
 		      </div>
 		      <div class="modal-body">
-		        Esta Seguro?<br/> Al momento de dar click a 'Si' no se podra marcha atras con la operacion 
+		        Esta Seguro?<br/> Al momento de dar click a 'Si' no se podra marcha atras con la operacion
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>

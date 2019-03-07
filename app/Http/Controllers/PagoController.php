@@ -214,10 +214,90 @@ class PagoController extends Controller
       } catch (Exception $e) {
         return redirect()->back()->with('msj','Hubo un error al registrar el pago, por favor verifique información');
       }
+      }
+
+
+
+      public function pagoConfirmadoPpal(OrdenFormRequest $request)
+      {  $carritoAnt=Session::has('carrito') ? Session::get('carrito') : null;
+         $carrito=new Carrito($carritoAnt);
+          try {
+            //se llama al carrito
+  
+                //se crea la orden y se asocian los datos y se crea en la base
+                if($carrito->elementos!=null){
+
+                  $orden=new Orden();
+                  $orden->codigo_seguimiento=substr(microtime(),11,strlen(microtime())-11);
+                  $orden->estado_servicio="PENDIENTE";
+                  $orden->estado_pago="SIN CANCELAR";
+                  $orden->tipo_orden="EN LINEA";
+                  $orden->user_id=auth()->user()->id;
+                }else{
+                  return back()->with('msj','El carrito está vacío por favor antes de registrar un pago, llenalo de productos');
+                }
+
+                if($orden->save()){
+                  //se registran los detalles de la orden y se guardan en la base
+                  foreach($carrito->elementos as $producto){
+
+                  $prodx=Producto::findOrFail($producto['elemento']->id);
+
+                  if($producto['cantidad']>$prodx->stock){
+                    $carrito->eliminar($producto['elemento']->id);
+                    $request->session()->put('carrito',$carrito);
+                    $orden->delete();
+
+                    return redirect()->action('ProductoController@verCarrito')
+                    ->with('msj','Error, se ha agregado más de un producto al carrito de lo que hay en la tienda, producto retirado, si su pago con PayPal ya fue efectuado por favor contacte nuestras oficinas');
+                  }else{
+                    $detalle=new DetalleOrden();
+                    $detalle->orden_id=$orden->id;
+                    $detalle->producto_id=$producto['elemento']->id;
+                    $detalle->cantidad_producto=$producto['cantidad'];
+                    $detalle->total_parcial=$producto['precio'];
+                    $detalle->save();
+                    $prodx->stock=$prodx->stock - $producto['cantidad'];
+                    $prodx->update();
+                  }
+
+                  }
+
+                  //se registra el pago y se cambia el estado de pago de la orden
+                  $pago=new Pago();
+                  $pago->orden_id=$orden->id;
+                  $pago->tipo_pago="PayPal";
+                  $pago->total_cancelar=$carrito->precioTotal;
+                  $pago->recibido=$carrito->precioTotal;
+                  $pago->cambio="0.0";
+                  if($pago->save()){
+                    $orden->estado_pago="CANCELADA";
+                    $orden->save();
+                  }
+                }
+                  //se elimina el carrito
+                  $carrito=null;
+                  $request->session()->put('carrito',$carrito);
+            return redirect()->action('TiendaController@index')->with('msj','compra realizada con éxito, puede pasar a retirar su compra con el número de orden: '.$orden->codigo_seguimiento);
+
+          } catch (Exception $e) {
+
+          }
+      }
+
+
+
+      public function pagoCancelado(){
+        return redirect()->action('ProductoController@verCarrito')->with('msj2','El pago con PayPal ha sido cancelado');
+      }
 
 
 
 
 
-    }
+
+
+
+
+
 }
