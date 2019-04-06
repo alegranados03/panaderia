@@ -20,6 +20,7 @@ class userDefault extends Seeder
       'direccion'=>'Panaderia',
       'email' => 'panaderia@panaderia.com',
       'password' => bcrypt('123456'),
+      'es_cliente'=>0
     ]);
     DB::table('role_user')->insert(['role_id'=>'1','user_id'=>'1']);
     }

@@ -62,6 +62,7 @@ class UserController extends Controller
   {
     try{
       $user = new User($request->all());
+      $user->es_cliente=0;
       $pass=substr(md5(microtime()),1,6);
       $user->password=bcrypt($pass);
       //se modificará para hacer una contraseña aleatoria y mandar un correo con datos
